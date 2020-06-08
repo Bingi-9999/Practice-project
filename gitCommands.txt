@@ -1,0 +1,2 @@
+To check the present directory    ---------->		pwd
+To find version of git		------------>		git --version	
