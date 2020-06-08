@@ -1,2 +1,3 @@
 To check the present directory    ---------->		pwd
 To find version of git		------------>		git --version	
+To create a directory or folder ------------>		mkdir <-- folder name -->
