@@ -1,0 +1,11 @@
+.flex div{
+    padding: 2%;
+    margin: 1%;
+    background-color: blueviolet;
+    border:2px solid black; 
+}
+.flex{ 
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
