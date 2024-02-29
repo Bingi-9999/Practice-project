@@ -9,5 +9,21 @@ wsc.SendKeys ("{SCROLLLOCK 2}")
 Loop
 
 
-fatal: [10.119.154.42]: FAILED! => {"changed": true, "cmd": "/opt/IBM/WebSphere/AppServer/bin/wsadmin.sh -lang jython -username wasadmin -password wasadmin -f /opt/IBM/WebSphere/AppServer/was_cluster_creation.py", "delta": "0:00:08.599872", "end": "2024-02-29 15:31:02.651530", "msg": "non-zero return code", "rc": 105, "start": "2024-02-29 15:30:54.051658", "stderr": "", "stderr_lines": [], "stdout": "WASX7209I: Connected to process \"dmgr\" on node CellManager01Host01 using SOAP connector;  The type of process is: DeploymentManager\nWASX7017E: Exception received while running file \"/opt/IBM/WebSphere/AppServer/was_cluster_creation.py\"; exception information: com.ibm.websphere.management.exception.InvalidConfigDataTypeException: ADMG0007E: The configuration data type Node01Host01 is not valid.", "stdout_lines": ["WASX7209I: Connected to process \"dmgr\" on node CellManager01Host01 using SOAP connector;  The type of process is: DeploymentManager", "WASX7017E: Exception received while running file \"/opt/IBM/WebSphere/AppServer/was_cluster_creation.py\"; exception information: com.ibm.websphere.management.exception.InvalidConfigDataTypeException: ADMG0007E: The configuration data type Node01Host01 is not valid."]}
+cluster_name = "MDMPMCluster"
+server1 = "MDMCE_APPSERVER01_HOST01"
+server2 = "MDMCE_APPSERVER02_HOST02"
+node1 = "Node01Host01"
+node2 = "Node02Host02"
+cell = "Cell01Host01"
+
+#serverConfig = f'/Cell:{cell}/Node:{node1}/Server:{server1}/'
+server = AdminConfig.getid('/Cell:CellManager01Host01/Node01Host01:/Server:MDMCE_APPSERVER01_HOST01/')
+AdminConfig.convertToCluster(server, cluster_name)
+AdminConfig.save()
+
+AdminClusterManagement.createClusterMember(cluster_name, node2, server2)
+
+AdminConfig.save()
+AdminNodeManagement.syncActiveNodes()
+AdminClusterManagement.startSingleCluster(cluster_name)
 
