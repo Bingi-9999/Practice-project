@@ -15,3 +15,18 @@ Loop
 
     - debug:
         var: cluster_output.stdout_lines
+
+
+- name: Ensure virtualenv is sourced from the .bashrc
+  blockinfile:
+    dest: "/root/.bashrc"
+    block: |
+      export TOP=/opt/IBM/MDM
+      . /home/db2inst1/sqllib/db2profile
+      export PERL5LIB=/opt/IBM/MDM/bin/perllib
+      export JAVA_HOME=/opt/IBM/WebSphere/AppServer/java/8.0/bin/java
+
+    marker: '# {mark} ANSIBLE MANAGED BLOCK - virtualenv'
+    insertbefore: BOF
+    create: yes
+
