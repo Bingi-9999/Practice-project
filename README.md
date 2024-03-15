@@ -46,3 +46,10 @@ Loop
     path: /path/to/your/file.xml
     xpath: /admin/cluster/host[@name="server2"]
     state: present
+
+- name: Modify <db_url> element in db_config.xml
+  xml:
+    path: /path/to/your/db_config.xml
+    xpath: /db_config/db_url
+    state: present
+    value: "jdbc:db2://10.116.102.41:25010/PIMDB:clientRerouteAlternateServerName=10.116.102.33;clientRerouteAlternatePortNumber=25010;"
