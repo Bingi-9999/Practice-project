@@ -55,6 +55,11 @@ Loop
     value: "jdbc:db2://10.116.102.41:25010/PIMDB:clientRerouteAlternateServerName=10.116.102.33;clientRerouteAlternatePortNumber=25010;"
 
 
+
+  fatal: [10.119.154.94]: FAILED! => {"changed": false, "msg": "Unsupported parameters for (xml) module: element. Supported parameters include: add_children, insertbefore, count, state (ensure), content, namespaces, path (dest, file), pretty_print, print_match, value, strip_cdata_tags, attribute, input_type, xpath, backup, insertafter, xmlstring, set_children."}
+
+
+
 An exception occurred during task execution. To see the full traceback, use -vvv. The error was: ModuleNotFoundError: No module named 'lxml'
 fatal: [10.119.154.94]: FAILED! => {"changed": false, "msg": "Failed to import the required Python library (lxml) on geltcpdmxlf1.dnbapp.net's Python /usr/libexec/platform-python. Please read the module documentation and install it in the appropriate location. If the required library is installed, but Ansible is using the wrong Python interpreter, please consult the documentation on ansible_python_interpreter"}
 
