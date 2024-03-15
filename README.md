@@ -30,3 +30,19 @@ Loop
     insertbefore: BOF
     create: yes
 
+
+- name: Add new host to cluster
+  xml:
+    path: /path/to/your/file.xml
+    xpath: /admin/cluster
+    state: present
+    element:
+      name: host
+      attributes:
+        name: server2
+
+- name: Verify changes
+  xml:
+    path: /path/to/your/file.xml
+    xpath: /admin/cluster/host[@name="server2"]
+    state: present
