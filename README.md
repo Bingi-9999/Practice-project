@@ -78,3 +78,8 @@ documentation and install it in the appropriate location. If the required librar
       - { name: "host", attributes: { name: "{{ pmmdm_server1_hostname }}" } }
 
 
+  -bash: export CCD_CONFIG_DIR=/opt/IBM/MDM/cluster/geltcpdmxlf1: No such file or directory
+-bash: . /opt/IBM/WebSphere/AppServer/profiles/AppSrv01Host01/bin/setupCmdLine.sh: No such file or directory
+
+
+
