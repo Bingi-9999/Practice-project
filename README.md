@@ -103,3 +103,39 @@ First, get the code on your system! The simplest method is via git:
 
 
 https://github.com/dnb-main/css-ltc-pmdm-infra.git
+
+
+
+[venkatasainathb@geltcpdbxl00 pmdm-ha-feb16]$ ansible-playbook pmdb_db2HA.yaml
+[DEPRECATION WARNING]: Ansible will require Python 3.8 or newer on the controller starting with Ansible 2.12. Current version: 3.6.8 (default, Jan  5 2024, 08:58:17) [GCC 8.5.0 20210514
+(Red Hat 8.5.0-20)]. This feature will be removed from ansible-core in version 2.12. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+/home/venkatasainathb/.local/lib/python3.6/site-packages/ansible/parsing/vault/__init__.py:44: CryptographyDeprecationWarning: Python 3.6 is no longer supported by the Python core team. Therefore, support for it is deprecated in cryptography. The next release of cryptography will remove support for Python 3.6.
+  from cryptography.exceptions import InvalidSignature
+
+PLAY [db2HA] ********************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************************************************************
+ok: [10.119.154.12]
+ok: [10.119.154.3]
+
+TASK [db2HA : Get stats of the DB2] *********************************************************************************************************************************************************
+ok: [10.119.154.12]
+ok: [10.119.154.3]
+
+
+
+[venkatasainathb@geltcpdbxl00 pmdm-ha-feb16]$ ansible-playbook productmaster-ha.yaml
+[DEPRECATION WARNING]: Ansible will require Python 3.8 or newer on the controller starting with Ansible 2.12. Current version: 3.6.8 (default, Jan  5 2024, 08:58:17) [GCC 8.5.0 20210514
+(Red Hat 8.5.0-20)]. This feature will be removed from ansible-core in version 2.12. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+/home/venkatasainathb/.local/lib/python3.6/site-packages/ansible/parsing/vault/__init__.py:44: CryptographyDeprecationWarning: Python 3.6 is no longer supported by the Python core team. Therefore, support for it is deprecated in cryptography. The next release of cryptography will remove support for Python 3.6.
+  from cryptography.exceptions import InvalidSignature
+
+PLAY [pmHA] *********************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************************************************************
+ok: [10.119.154.6]
+ok: [10.119.154.8]
+
+TASK [pmdmha : Update pam] ******************************************************************************************************************************************************************
+ok: [10.119.154.6]
+
