@@ -27,3 +27,14 @@ The offending line appears to be:
     <db_class_name>com.ibm.db2.jcc.DB2Driver</db_class_name>
     <db_type>db2</db_type>
 </db_config>
+
+
+<db_config>
+  <db_userName>pmuser</db_userName>
+  <db_password_encrypted/>
+  <db_password_plain>pmuser</db_password_plain>
+  <db_url>jdbc:db2://{{ db_server1_ip }}:{{ db_server1_port }}/PIMDB:clientRerouteAlternateServerName={{ db_server2_ip }};clientRerouteAlternatePortNumber={{ db_server2_port }};</db_url>
+  <db_class_name>com.ibm.db2.jcc.DB2Driver</db_class_name>
+  <db_type>db2</db_type>
+</db_config>
+
